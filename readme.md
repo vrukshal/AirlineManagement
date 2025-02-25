@@ -44,7 +44,7 @@ This **Airline Management System** is a comprehensive solution that helps manage
 <details open> 
   <summary><h2>🖼 Entity Relationship Diagram (ERD)</h2></summary>
   <p align="center">
-    <img src="image.png" alt="ERD Diagram"/>
+    <img src="EER_Diagram.PNG" alt="ERD Diagram"/>
   </p>
 </details>
 
