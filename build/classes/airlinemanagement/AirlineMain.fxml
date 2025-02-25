@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlinemanagement.AirlineMainController">
+   <top>
+      <Label id="toggle" alignment="CENTER" prefHeight="54.0" prefWidth="344.0" stylesheets="@sstyle.css" text="Airline Management" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Commercial Script BT" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <AnchorPane fx:id="navPane" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <HBox layoutX="-5.0" layoutY="-4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox id="toggle" prefHeight="511.0" prefWidth="172.0" stylesheets="@sstyle.css">
+                     <children>
+                        <ToggleButton id="orange" fx:id="setPpSceneBtn" mnemonicParsing="false" onAction="#setTicketScene" prefHeight="50.0" prefWidth="139.0" stylesheets="@sstyle.css" text="Ticket Booking">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="g1" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <Label />
+                        <ToggleButton id="orange" fx:id="setTicketScene" mnemonicParsing="false" onAction="#setFlightScene" prefHeight="50.0" prefWidth="139.0" stylesheets="@sstyle.css" text="Add Flight" toggleGroup="$g1" />
+                        <Label />
+                        <ToggleButton id="orange" fx:id="setFlightScene" mnemonicParsing="false" onAction="#setPpScene" prefHeight="50.0" prefWidth="139.0" stylesheets="@sstyle.css" text="Pilot / Plane" toggleGroup="$g1" />
+                        <Label />
+                        <Label />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

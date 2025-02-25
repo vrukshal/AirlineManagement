@@ -1,0 +1,73 @@
+create database airline;
+use airline;
+
+CREATE TABLE `PlaneTable`(
+`Id` INT NOT NULL AUTO_INCREMENT , 
+`PlaneName` Varchar(50) NOT NULL,
+`Capacity` Varchar(50) NOT NULL,
+Key (`PlaneName`),
+primary Key (`Id`)); 
+
+ 
+
+CREATE TABLE `PilotTable`(
+`Id` INT NOT NULL AUTO_INCREMENT , 
+`PilotName` Varchar(50) NOT NULL,
+`PilotContact` Varchar(50) NOT NULL,
+`PilotAddress` Varchar(50) NOT NULL,
+
+primary Key (`Id`)); 
+
+
+CREATE TABLE `FlightTable`(
+`Id` INT NOT NULL AUTO_INCREMENT ,
+`FlightName` Varchar(50) NOT NULL, 
+`PName` Varchar(50) NOT NULL,
+`EconomyFare`Double NOT NULL DEFAULT 0,
+
+`BusinessFare` Double NOT NULL DEFAULT 0,
+
+`Source` Varchar(50) NOT NULL,
+`Destination` Varchar(50) NOT NULL,
+`DepartureTime` Varchar(50) NOT NULL,
+`ArrivalTime` Varchar(50) NOT NULL,
+
+primary Key (`Id`),
+
+ INDEX par_ind (PName),
+  CONSTRAINT fk_branchTable FOREIGN KEY (PName)
+  	REFERENCES Planetable (PlaneName)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE  );
+ 
+CREATE TABLE `TicketTable`(
+`Id` INT NOT NULL AUTO_INCREMENT ,
+`tDate` datetime, 
+`source` Varchar(50) NOT NULL,
+`destination`Varchar(50) NOT NULL,
+`FlightName` Varchar(50) NOT NULL,
+`Class` Varchar(50) NOT NULL,
+`Amount` Double NOT NULL DEFAULT 0,
+
+
+primary Key (`Id`));
+
+
+
+
+
+
+CREATE TABLE`PassengerTable`(
+`Id` INT NOT NULL AUTO_INCREMENT ,
+`Ticketid` INT NOT NULL, 
+`Name` Varchar(50) NOT NULL,
+`Passport` Varchar(50) NOT NULL,
+`Age` INT NOT NULL,
+`Gender`Varchar(15) NOT NULL,
+primary Key (`Id`),
+
+ INDEX par_ind (Ticketid),
+  CONSTRAINT fk_PassengerTable FOREIGN KEY (Ticketid)
+  	REFERENCES Tickettable (Id)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE );
